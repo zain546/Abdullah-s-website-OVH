@@ -1,33 +1,610 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
+@import "~@fortawesome/fontawesome-free/css/all.css";
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: "Urbanist", sans-serif;
+  overflow-x: hidden;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+a {
+  text-decoration: none;
+  color: currentColor;
+}
+
+a:hover {
+  color: currentColor;
+}
+.item a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  width: 100vw;
+  height: 75px;
+  background-color: #000000;
+  box-shadow: 0px 3px 8px rgba(0, 0, 0, 45%);
+  display: flex;
+  align-items: center;
+}
+
+header .container-fluid {
+  width: 100%;
+  padding: 0 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 992px) {
+  header .container-fluid {
+    padding: 0 5%;
   }
+}
+
+header .navb-logo img {
+  width: 60px;
+  height: 66px;
+}
+
+header .navb-items {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  letter-spacing: 3px;
+}
+
+header .item {
+  text-align: center;
+  margin-inline: 15%;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: #ffffff;
+  padding: 5px 0;
+  transition: all 0.1s ease;
+  border-bottom: 0px solid #ffffff;
+  border-top: 0px solid #ffffff;
+  cursor: pointer;
+}
+
+header .item:hover {
+  border-bottom: 3px solid #ffffff;
+  border-top: 3px solid #ffffff;
+}
+
+header .item-button a {
+  background-color: #ffffff;
+  width: 150px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  transition: all 0.5s ease;
+}
+
+header .item-button a:hover {
+  background-color: #055ffc;
+}
+
+header .mobile-toggler {
+  font-size: 30px;
+}
+
+/* modal */
+
+.modal-dialog {
+  margin: 0;
+  width: 430px;
+}
+
+@media (max-width: 450px) {
+  .modal-dialog {
+    width: 82%;
+  }
+}
+
+.modal-content {
+  border-radius: 0;
+  height: 100vh;
+  overflow-y: scroll;
+  background-color: #000000;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88%;
+  margin: 0 auto;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #ffffff;
+}
+
+.modal-header img {
+  width: 140px;
+  height: 66px;
+  margin-top: 17.5px;
+}
+
+.modal-header .btn-close {
+  background: transparent;
+  opacity: 1;
+}
+
+.modal-header i {
+  color: #ffffff;
+  font-size: 30px;
+}
+
+.modal-body {
+  width: 88%;
+  margin: 0 auto;
+  padding: 75px 0 0 0;
+  flex: unset;
+}
+
+.modal-body .modal-line {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 7px 0;
+  margin-bottom: 50px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  color: #000000;
+  border-bottom: 1px solid #ffffff;
+}
+i {
+  color: #ffffff;
+}
+
+.modal-body .modal-line:hover {
+  color: #055ffc;
+  border-bottom: 1px solid #055ffc;
+}
+
+.modal-line a {
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: #ffffff;
+}
+
+.modal-line i {
+  color: currentColor;
+  font-size: 30px;
+  width: 35px;
+  margin-right: 15px;
+  padding: 0 0 3px 3px;
+}
+
+.navb-button {
+  width: 100%;
+  height: 47px;
+  background-color: #fefefe;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 700;
+  color: #274d8a;
+  letter-spacing: 2px;
+  transition: all 0.5s ease;
+}
+
+.navb-button:hover {
+  background-color: #055ffc;
+  color: #000000;
+}
+
+.mobile-modal-footer {
+  width: 87%;
+  margin: 0 auto;
+  padding: 20% 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 25px;
+  color: #055ffc;
+}
+
+.mobile-modal-footer i:hover {
+  color: #055ffc;
+}
+
+/* This Is NavBar Endning */
+/* This is About us Start */
+
+.about-us-section {
+  background-color: #000000;
+  padding: 100px;
+  color: white;
+  margin-bottom: 1px;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.section-text {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-color: #000000;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #055ffc;
+}
+
+/* This is About us ending */
+/* this is carousel Start */
+
+.carousel-section {
+  position: relative;
+  overflow: hidden;
+  height: 500px;
+}
+
+.carousel-inner {
+  height: 500px;
+}
+
+.carousel-item {
+  height: 500px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* This is carousel end */
+
+.footer-class {
+  color: #ffffff;
+  background-color: #055ffc;
+  padding: 20px;
+  text-align: center;
+}
+
+/*  this is footer claas */
+
+footer {
+  background: #000000;
+  padding: 85px 0;
+  height: auto;
+  margin-top: 1px;
+}
+.single-content {
+  text-align: center;
+  padding: 115px 0;
+}
+.single-box p {
+  color: #fff;
+  line-height: 1.9;
+}
+.single-box h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+}
+.single-box .card-area i {
+  color: #ffffff;
+  font-size: 20px;
+  margin-right: 10px;
+}
+.single-box ul {
+  list-style: none;
+  padding: 0;
+}
+.single-box ul li a {
+  text-decoration: none;
+  color: #fff;
+  line-height: 2.5;
+  font-weight: 100;
+}
+.single-box h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+#basic-addon2 {
+  background: #fe1e4f;
+  color: #fff;
+}
+.socials i {
+  font-size: 18px;
+  margin-right: 15px;
+}
+@media (max-width: 767px) {
+  .single-box {
+    margin-bottom: 50px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .single-box {
+    margin-bottom: 50px;
+  }
+}
+/* This is footer end */
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#055ffc, #000000);
+}
+#img1 {
+  box-shadow: 0px 5px 5px 0px #292828;
+}
+/* this is card section */
+#id {
+  background-color: black;
+  height: 100dvh;
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 1px;
+  margin-top: 15px;
+}
+
+.section-header p {
+  font-size: 18px;
+}
+.single-service {
+  border: 1px solid #ffffff;
+  text-align: center;
+  background: #000000;
+  color: white;
+  margin-bottom: 10px;
+}
+.service-bg {
+  height: 60dvh;
+  position: relative;
+}
+
+.service-bg-1 {
+  /* background: url("https://abdurkhan11.github.io/solarenergy.github.io/Pics/ricardo-gomez-angel-IQDWnu2xfRI-unsplash.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+.service-bg-2 {
+  /* background: url("https://abdurkhan11.github.io/solarenergy.github.io/Pics/bill-mead-wmaP3Tl80ww-unsplash.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+.service-bg-3 {
+  /* background: url("https://abdurkhan11.github.io/solarenergy.github.io/Pics/vivint-solar-9CalgkSRZb8-unsplash.jpg"); */
+  background-size: cover;
+  background-position: center;
+}
+
+.service-bg h2 {
+  color: #fff;
+  background: #055ffc;
+  border: 1px solid white;
+  font-size: 17px;
+  text-align: center;
+  font: weight 70px;
+  padding: 15px;
+  position: absolute;
+  left: 8%;
+  width: 84%;
+  bottom: -25px;
+  border-radius: 50px;
+  letter-spacing: 2px;
+}
+
+.btn-area:hover {
+  cursor: pointer;
+  color: #055ffc;
+  transform: scale(1.1);
+}
+.service-text {
+  padding: 50px 30px 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+.service-text p:last-child {
+  margin: 0;
+  line-height: 1.8;
+}
+.btn-area {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 700;
+  margin-top: 30px;
+  text-transform: capitalize;
+}
+
+/* this is pricing section */
+.pricing-table {
+  background: #000000;
+}
+.pricing-table .details {
+  margin-top: 1px;
+  padding: 40px 20px;
+  text-align: center;
+}
+.pricing-table .details h6 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-display: underline;
+  color: #055ffc;
+}
+
+.pricing-table .title {
+  text-decoration: underline;
+}
+.description-details {
+  font-size: 40px;
+}
+.pricing-table .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px 0px;
+  padding: 20px;
+}
+.pricing-table .grid .box {
+  width: 250px;
+  background-color: #055ffc;
+  border: 1px solid #fefefe;
+  text-align: center;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0px 2px 10px 5px rgb(0, 0, 0.05);
+  margin: 13px;
+  margin-bottom: 50px;
+}
+.pricing-table .grid .box .title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.pricing-table .grid .box .price {
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+.pricing-table .grid .box .price b {
+  display: block;
+  font-size: 40px;
+  margin-bottom: -5px;
+}
+.pricing-table .grid .box .features > * {
+  color: #ffffff;
+  padding: 8px 0px;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.pricing-table .grid .box .button button {
+  width: 100%;
+  margin: 25px 0px 0px;
+  padding: 10px;
+  background: #fefefe;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.pricing-table .grid .box.professional {
+  transform: scale(1.1);
+  background-color: #055ffc;
+}
+.pricing-table .grid .box .button button:hover {
+  background: #000000;
+  transition: 0.5s;
+  color: #fefefe;
+}
+
+@media (max-width: 804px) {
+  .pricing-table .grid {
+    gap: 0px;
+  }
+  .pricing-table .grid .box.professional {
+    transform: scale(1);
+  }
+  .pricing-table .grid .box:hover {
+    transition: 0.5s;
+    transform: scale(1.1);
+  }
+}
+
+/* search code */
+.input__container {
+  position: relative;
+  background: rgba(255, 255, 255, 0.664);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  border-radius: 22px;
+  max-width: 300px;
+  transition: transform 400ms;
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(-6deg);
+  perspective: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shadow__input {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  filter: blur(30px);
+  border-radius: 20px;
+  background-color: #055ffc;
+  background-image: radial-gradient(
+      at 85% 51%,
+      hsla(60, 60%, 61%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(at 74% 68%, hsla(235, 69%, 77%, 1) 0px, transparent 50%),
+    radial-gradient(at 64% 79%, hsla(284, 72%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 75% 16%, hsla(283, 60%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 90% 65%, hsla(153, 70%, 64%, 1) 0px, transparent 50%),
+    radial-gradient(at 91% 83%, hsla(283, 74%, 69%, 1) 0px, transparent 50%),
+    radial-gradient(at 72% 91%, hsla(213, 75%, 75%, 1) 0px, transparent 50%);
+}
+
+.input__button__shadow {
+  cursor: pointer;
+  border: none;
+  background: none;
+  transition: transform 400ms, background 400ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  padding: 5px;
+}
+
+.input__button__shadow:hover {
+  background: rgba(255, 255, 255, 0.411);
+}
+
+.input__search {
+  width: 100%;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 5px;
+  position: relative;
+  font-size: 14px;
+}
+.navb-logo {
+  width: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#service{
+  padding: 20px;
 }
